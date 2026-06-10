@@ -89,7 +89,7 @@ const NEWS_ITEMS = [
   }
 ];
 
-const STORAGE_KEY = "aidt-showcase-mockup-state-v14";
+const STORAGE_KEY = "aidt-showcase-mockup-state-v15";
 const DEFAULT_STATE = {
   page: "exhibition",
   school: "초등학교",
