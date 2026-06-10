@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI 디지털 교육자료 웹전시관 목업</title>
+  <link rel="stylesheet" href="./style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="notice-bar">
+      방문 기록과 검색 설정은 지금 사용하시는 브라우저와 컴퓨터에서만 저장됩니다. 다른 브라우저에서는 보이지 않습니다.
+    </div>
+
+    <nav class="service-gnb" aria-label="상단 메뉴">
+      <button type="button" class="service-gnb__item is-active" data-page-target="exhibition">웹 전시관</button>
+      <button type="button" class="service-gnb__item" data-page-target="guide">도입 및 사용 안내</button>
+      <button type="button" class="service-gnb__item" data-page-target="publisher">발행사 안내 및 문의</button>
+      <button type="button" class="service-gnb__item" data-page-target="news">소식 및 홍보센터</button>
+      <button type="button" class="service-gnb__item" data-page-target="resources">자료실</button>
+    </nav>
+  </header>
+
+  <main>
+    <section id="exhibition" class="page-section is-active exhibition-page" data-page="exhibition">
+      <div class="mock-dim-layer" aria-hidden="true"></div>
+      <div class="mock-guide-banner" role="note">
+        본 화면은 목업으로, 실제 화면은 <a href="https://aidtshow.kr/" target="_blank" rel="noopener noreferrer">https://aidtshow.kr/</a>와 동일하게 적용 필요
+      </div>
+      <div class="exhibition-hero">
+        <div class="brand-wrap" role="button" tabindex="0" aria-label="웹 전시관 홈으로 이동">
+          <div class="robot" aria-hidden="true">
+            <span class="robot__antenna"></span>
+            <span class="robot__ear robot__ear--left"></span>
+            <span class="robot__ear robot__ear--right"></span>
+            <span class="robot__face"><i></i><i></i></span>
+          </div>
+          <div class="brand-title">
+            <strong class="brand-title__ai">AI</strong>
+            <span>디지털<br />교육자료 <b>웹전시관</b></span>
+          </div>
+        </div>
+
+        <div class="school-tabs" aria-label="학교급 선택">
+          <button type="button" class="school-tab is-active" data-school="초등학교">
+            <span class="school-tab__label school-tab__label--green">기초 지식</span>
+            <em>창의력 상승</em>
+            <strong>초등학생</strong>
+          </button>
+          <button type="button" class="school-tab" data-school="중학교">
+            <span class="school-tab__label school-tab__label--blue">문제 해결</span>
+            <em>사고력 확장</em>
+            <strong>중학생</strong>
+          </button>
+          <button type="button" class="school-tab" data-school="고등학교">
+            <span class="school-tab__label school-tab__label--purple">심화 학습</span>
+            <em>지식 탐구</em>
+            <strong>고등학생</strong>
+          </button>
+        </div>
+      </div>
+
+      <div class="filter-strip">
+        <div class="filter-strip__group">
+          <span class="filter-strip__title">과목</span>
+          <div class="pill-group" id="subjectPills" aria-label="과목 선택"></div>
+        </div>
+        <div class="filter-strip__divider"></div>
+        <div class="filter-strip__group">
+          <span class="filter-strip__title">학년</span>
+          <div class="pill-group" id="gradePills" aria-label="학년 선택"></div>
+        </div>
+      </div>
+
+      <div class="exhibition-board">
+        <aside class="filter-sidebar" aria-label="상세 검색 조건">
+          <section class="side-filter">
+            <button type="button" class="side-filter__title" data-accordion="semester">
+              <span>학기</span><span class="chevron">⌃</span>
+            </button>
+            <div class="side-filter__body is-open" data-accordion-panel="semester">
+              <label class="radio-row"><input type="radio" name="semester" value="전체" checked /><span>전체</span></label>
+              <label class="radio-row"><input type="radio" name="semester" value="1학기" /><span>1학기</span></label>
+              <label class="radio-row"><input type="radio" name="semester" value="2학기" /><span>2학기</span></label>
+              <label class="radio-row"><input type="radio" name="semester" value="전학기" /><span>전학기</span></label>
+            </div>
+          </section>
+
+          <section class="side-filter side-filter--publisher">
+            <button type="button" class="side-filter__title" data-accordion="publisher">
+              <span>발행사</span><span class="chevron">⌃</span>
+            </button>
+            <div class="side-filter__body is-open" data-accordion-panel="publisher">
+              <button type="button" class="publisher-chip is-active" data-publisher="전체"><span class="publisher-chip__mark publisher-chip__mark--all">ALL</span><em>전체</em></button>
+              <button type="button" class="publisher-chip" data-publisher="동아출판"><span class="publisher-chip__mark publisher-chip__mark--dong-a">동아</span><em>동아출판(주)</em></button>
+              <button type="button" class="publisher-chip" data-publisher="디딤돌교육"><span class="publisher-chip__mark publisher-chip__mark--double">더블</span><em>(주)디딤돌교육</em></button>
+              <button type="button" class="publisher-chip" data-publisher="비상교육"><span class="publisher-chip__mark publisher-chip__mark--visang">비상</span><em>(주)비상교육</em></button>
+              <button type="button" class="publisher-chip" data-publisher="아이스크림미디어"><span class="publisher-chip__mark publisher-chip__mark--ice">ICE</span><em>(주)아이스크림미디어</em></button>
+              <button type="button" class="publisher-chip" data-publisher="와이비엠"><span class="publisher-chip__mark publisher-chip__mark--ybm">YBM</span><em>(주)와이비엠</em></button>
+              <button type="button" class="publisher-chip" data-publisher="지학사"><span class="publisher-chip__mark publisher-chip__mark--jihak">지학</span><em>(주)지학사</em></button>
+              <button type="button" class="publisher-chip" data-publisher="천재교육"><span class="publisher-chip__mark publisher-chip__mark--chunjae">천재</span><em>(주)천재교육</em></button>
+            </div>
+          </section>
+        </aside>
+
+        <section class="product-area" aria-live="polite">
+          <div class="result-summary">
+            <span id="resultCount">총 0개의 교육자료</span>
+            <button type="button" class="text-button" id="resetSearch">검색 설정 초기화</button>
+          </div>
+          <div class="product-grid" id="productGrid"></div>
+        </section>
+      </div>
+    </section>
+
+    <section id="guide" class="page-section sub-page" data-page="guide">
+      <div class="sub-page__inner">
+        <header class="sub-page-header">
+          <span>ONBOARDING GUIDE</span>
+          <h1>도입 및 사용 안내</h1>
+          <p>학교에서 AI 디지털 교육자료를 도입하기 전 확인해야 할 절차와 주문/계약 기준, 자주 묻는 질문을 한 화면에 정리한 목업입니다.</p>
+        </header>
+
+        <div class="guide-layout">
+          <article class="process-card process-card--with-visual">
+            <div class="process-card__text">
+              <span class="process-card__step">01</span>
+              <h2>서비스 탐색</h2>
+              <p><a href="#exhibition" class="inline-page-link" data-page-target="exhibition">웹 전시관</a>에서 학교급, 과목, 학년, 학기, 발행사별 교육자료를 확인합니다.</p>
+            </div>
+            <div class="process-card__visual process-card__visual--explore" aria-hidden="true">
+              <svg viewBox="0 0 160 128" xmlns="http://www.w3.org/2000/svg" role="img">
+                <rect x="20" y="20" width="86" height="58" rx="12" fill="#1F2937"/>
+                <rect x="28" y="28" width="70" height="42" rx="8" fill="#F8FAFC"/>
+                <rect x="42" y="88" width="42" height="8" rx="4" fill="#D1D5DB"/>
+                <rect x="58" y="78" width="12" height="12" rx="3" fill="#9CA3AF"/>
+                <circle cx="113" cy="64" r="20" fill="#22C55E" opacity="0.18"/>
+                <circle cx="113" cy="64" r="14" fill="#22C55E"/>
+                <rect x="88" y="41" width="22" height="6" rx="3" fill="#E5E7EB"/>
+                <rect x="38" y="38" width="24" height="6" rx="3" fill="#93C5FD"/>
+                <rect x="38" y="50" width="34" height="6" rx="3" fill="#BFDBFE"/>
+                <path d="M121 72 L132 83" stroke="#14532D" stroke-width="6" stroke-linecap="round"/>
+              </svg>
+            </div>
+          </article>
+          <article class="process-card process-card--with-visual">
+            <div class="process-card__text">
+              <span class="process-card__step">02</span>
+              <h2>도입 상담</h2>
+              <p><a href="#publisher" class="inline-page-link" data-page-target="publisher">발행사 문의처</a>를 통해 체험 계정, 사용 규모, 견적 및 계약 방식을 확인합니다.</p>
+            </div>
+            <div class="process-card__visual process-card__visual--consult" aria-hidden="true">
+              <svg viewBox="0 0 160 128" xmlns="http://www.w3.org/2000/svg" role="img">
+                <rect x="18" y="28" width="62" height="42" rx="16" fill="#DBEAFE"/>
+                <rect x="78" y="18" width="64" height="46" rx="16" fill="#DCFCE7"/>
+                <circle cx="45" cy="49" r="8" fill="#2563EB"/>
+                <rect x="58" y="44" width="12" height="10" rx="5" fill="#60A5FA"/>
+                <circle cx="102" cy="41" r="8" fill="#16A34A"/>
+                <rect x="115" y="36" width="15" height="10" rx="5" fill="#86EFAC"/>
+                <path d="M33 70 L26 80 L42 74" fill="#DBEAFE"/>
+                <path d="M122 64 L133 74 L128 60" fill="#DCFCE7"/>
+                <circle cx="58" cy="96" r="17" fill="#FDE68A"/>
+                <rect x="78" y="86" width="44" height="20" rx="10" fill="#F59E0B" opacity="0.24"/>
+                <rect x="86" y="92" width="28" height="8" rx="4" fill="#F59E0B"/>
+              </svg>
+            </div>
+          </article>
+          <article class="process-card process-card--with-visual">
+            <div class="process-card__text">
+              <span class="process-card__step">03</span>
+              <h2>주문/계약</h2>
+              <p>학교 내부 검토 후 주문서, 계약 서류, 사용 시작일 및 납품 방식을 확정합니다.</p>
+            </div>
+            <div class="process-card__visual process-card__visual--contract" aria-hidden="true">
+              <svg viewBox="0 0 160 128" xmlns="http://www.w3.org/2000/svg" role="img">
+                <rect x="28" y="18" width="72" height="92" rx="12" fill="#FFFFFF" stroke="#D1D5DB" stroke-width="2"/>
+                <rect x="42" y="34" width="42" height="8" rx="4" fill="#D1FAE5"/>
+                <rect x="42" y="50" width="46" height="6" rx="3" fill="#E5E7EB"/>
+                <rect x="42" y="62" width="38" height="6" rx="3" fill="#E5E7EB"/>
+                <rect x="42" y="74" width="32" height="6" rx="3" fill="#E5E7EB"/>
+                <circle cx="112" cy="46" r="20" fill="#2563EB" opacity="0.14"/>
+                <path d="M103 46 L110 53 L123 38" stroke="#2563EB" stroke-width="7" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+                <path d="M94 86 C103 78, 111 78, 120 86" stroke="#FB923C" stroke-width="6" stroke-linecap="round"/>
+                <path d="M98 98 L132 98" stroke="#FB923C" stroke-width="6" stroke-linecap="round"/>
+              </svg>
+            </div>
+          </article>
+          <article class="process-card process-card--with-visual">
+            <div class="process-card__text">
+              <span class="process-card__step">04</span>
+              <h2>계정 발급 및 사용</h2>
+              <p>교사·학생 계정 세팅 후 수업에 적용하고, 필요 시 발행사로 문의합니다.</p>
+            </div>
+            <div class="process-card__visual process-card__visual--account" aria-hidden="true">
+              <svg viewBox="0 0 160 128" xmlns="http://www.w3.org/2000/svg" role="img">
+                <rect x="22" y="30" width="110" height="68" rx="16" fill="#EEF2FF"/>
+                <rect x="30" y="38" width="40" height="52" rx="12" fill="#4F46E5" opacity="0.18"/>
+                <circle cx="50" cy="54" r="10" fill="#4F46E5"/>
+                <path d="M38 76 C42 68, 58 68, 62 76" fill="#4F46E5"/>
+                <rect x="80" y="46" width="38" height="8" rx="4" fill="#A5B4FC"/>
+                <rect x="80" y="60" width="26" height="8" rx="4" fill="#C7D2FE"/>
+                <circle cx="120" cy="84" r="16" fill="#22C55E" opacity="0.18"/>
+                <path d="M120 74 V84 L127 88" stroke="#16A34A" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+          </article>
+        </div>
+
+        <div class="two-column">
+          <article class="white-panel">
+            <h2>주문/계약 안내</h2>
+            <ul class="check-list">
+              <li>학교/기관명, 담당자, 도입 희망 교과 확인</li>
+              <li>학년·반·학생 수 기준 사용 규모 산정</li>
+              <li>발행사별 견적, 계약 방식, 납품 일정 확인</li>
+              <li>계정 발급 및 사용 시작일 협의</li>
+            </ul>
+          </article>
+          <article class="white-panel">
+            <h2>자주 묻는 질문 TOP 3</h2>
+            <div class="faq-list">
+              <button type="button" class="faq-button">체험 사이트는 별도 로그인 없이 이용할 수 있나요?</button>
+              <div class="faq-panel">발행사별 정책에 따라 다를 수 있습니다. 전시관에서 제공하는 체험 버튼을 클릭해 각 발행사의 안내를 확인하도록 구성합니다.</div>
+              <button type="button" class="faq-button">도입 문의는 어디로 해야 하나요?</button>
+              <div class="faq-panel">발행사 안내 및 문의 메뉴에서 발행사별 문의처와 체험 문의 경로를 확인하도록 구성합니다.</div>
+              <button type="button" class="faq-button">KERIS 포털 가입이 필요한가요?</button>
+              <div class="faq-panel">실제 사용 방식에 따라 포털 가입 또는 계정 연계가 필요할 수 있어 자료실에 별도 안내 자료를 배치합니다.</div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="publisher" class="page-section sub-page" data-page="publisher">
+      <div class="sub-page__inner">
+        <header class="sub-page-header">
+          <span>PUBLISHER INFO</span>
+          <h1>발행사 안내 및 문의</h1>
+          <p>발행사별 문의 경로를 한눈에 확인하고, 홈페이지는 바로가기·카카오톡은 QR코드 보기로 연결하는 화면입니다.</p>
+        </header>
+
+        <div class="publisher-layout publisher-layout--single">
+          <div class="publisher-list">
+            <article class="publisher-card publisher-card--contact">
+              <span class="publisher-card__logo publisher-card__logo--visang">비상</span>
+              <div class="publisher-card__body">
+                <div class="publisher-card__head">
+                  <h2>비상교육</h2>
+                </div>
+                <div class="contact-list" aria-label="비상교육 문의 경로">
+                  <div class="contact-row"><span class="contact-row__label">카카오톡 채널</span><button type="button" class="contact-action contact-action--button" data-qr-title="비상교육 카카오톡 채널" data-qr-subtitle="QR코드를 촬영해 채널을 추가하거나 문의를 시작할 수 있습니다.">QR코드 보기</button></div>
+                  <div class="contact-row"><span class="contact-row__label">이메일</span><div class="contact-value-group"><span class="contact-action">aidt@visang.com</span><button type="button" class="copy-button" data-copy-text="aidt@visang.com" aria-label="비상교육 이메일 복사">복사</button></div></div>
+                  <div class="contact-row"><span class="contact-row__label">대표번호</span><span class="contact-action">1544-0554</span></div>
+                  <div class="contact-row"><span class="contact-row__label">홈페이지</span><a class="contact-action contact-action--link" href="https://www.visang.com" target="_blank" rel="noopener noreferrer">바로가기</a></div>
+                </div>
+              </div>
+            </article>
+
+            <article class="publisher-card publisher-card--contact">
+              <span class="publisher-card__logo publisher-card__logo--dong-a">동아</span>
+              <div class="publisher-card__body">
+                <div class="publisher-card__head">
+                  <h2>동아출판</h2>
+                </div>
+                <div class="contact-list" aria-label="동아출판 문의 경로">
+                  <div class="contact-row"><span class="contact-row__label">이메일</span><div class="contact-value-group"><span class="contact-action">aidt@dongapublishing.com</span><button type="button" class="copy-button" data-copy-text="aidt@dongapublishing.com" aria-label="동아출판 이메일 복사">복사</button></div></div>
+                  <div class="contact-row"><span class="contact-row__label">대표번호</span><span class="contact-action">1644-0600</span></div>
+                  <div class="contact-row"><span class="contact-row__label">홈페이지</span><a class="contact-action contact-action--link" href="https://www.dongapublishing.com" target="_blank" rel="noopener noreferrer">바로가기</a></div>
+                </div>
+              </div>
+            </article>
+
+            <article class="publisher-card publisher-card--contact">
+              <span class="publisher-card__logo publisher-card__logo--ice">ICE</span>
+              <div class="publisher-card__body">
+                <div class="publisher-card__head">
+                  <h2>아이스크림미디어</h2>
+                </div>
+                <div class="contact-list" aria-label="아이스크림미디어 문의 경로">
+                  <div class="contact-row"><span class="contact-row__label">카카오톡 채널</span><button type="button" class="contact-action contact-action--button" data-qr-title="아이스크림미디어 카카오톡 채널" data-qr-subtitle="QR코드를 촬영해 채널을 추가하거나 상담 페이지로 이동할 수 있습니다.">QR코드 보기</button></div>
+                  <div class="contact-row"><span class="contact-row__label">대표번호</span><span class="contact-action">1544-0910</span></div>
+                  <div class="contact-row"><span class="contact-row__label">홈페이지</span><a class="contact-action contact-action--link" href="https://www.i-screammedia.com" target="_blank" rel="noopener noreferrer">바로가기</a></div>
+                </div>
+              </div>
+            </article>
+
+            <article class="publisher-card publisher-card--contact">
+              <span class="publisher-card__logo publisher-card__logo--chunjae">천재</span>
+              <div class="publisher-card__body">
+                <div class="publisher-card__head">
+                  <h2>천재교육</h2>
+                </div>
+                <div class="contact-list" aria-label="천재교육 문의 경로">
+                  <div class="contact-row"><span class="contact-row__label">이메일</span><div class="contact-value-group"><span class="contact-action">aidt@chunjae.co.kr</span><button type="button" class="copy-button" data-copy-text="aidt@chunjae.co.kr" aria-label="천재교육 이메일 복사">복사</button></div></div>
+                  <div class="contact-row"><span class="contact-row__label">대표번호</span><span class="contact-action">1577-0902</span></div>
+                  <div class="contact-row"><span class="contact-row__label">홈페이지</span><a class="contact-action contact-action--link" href="https://www.chunjae.co.kr" target="_blank" rel="noopener noreferrer">바로가기</a></div>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="news" class="page-section sub-page" data-page="news">
+      <div class="sub-page__inner">
+        <header class="sub-page-header">
+          <span>NEWS & PR CENTER</span>
+          <h1>소식 및 홍보센터</h1>
+          <p>공지사항, 보도자료, 행사 안내, 서비스 업데이트를 분류해서 확인할 수 있는 화면입니다.</p>
+        </header>
+
+        <div class="news-tabs" aria-label="소식 분류">
+          <button type="button" class="news-tab is-active" data-news="전체">전체</button>
+          <button type="button" class="news-tab" data-news="공지사항">공지사항</button>
+          <button type="button" class="news-tab" data-news="보도자료">보도자료</button>
+          <button type="button" class="news-tab" data-news="행사 안내">행사 안내</button>
+          <button type="button" class="news-tab" data-news="서비스 업데이트">서비스 업데이트</button>
+        </div>
+        <div class="news-list" id="newsList"></div>
+        <article class="news-detail" id="newsDetail" hidden>
+          <button type="button" class="news-detail__back" id="newsBackButton">목록으로 돌아가기</button>
+          <header class="news-detail__header">
+            <span class="news-detail__category" id="newsDetailCategory">공지사항</span>
+            <h2 id="newsDetailTitle">게시글 제목</h2>
+            <time id="newsDetailDate" datetime="2026-06-10">2026.06.10</time>
+          </header>
+          <div class="news-detail__body" id="newsDetailBody"></div>
+        </article>
+      </div>
+    </section>
+    <section id="resources" class="page-section sub-page" data-page="resources">
+      <div class="sub-page__inner">
+        <header class="sub-page-header">
+          <span>RESOURCE CENTER</span>
+          <h1>자료실</h1>
+          <p>도입 검토와 교내 공유에 필요한 자료를 카드형 다운로드 영역으로 정리했습니다.</p>
+        </header>
+
+        <div class="resource-grid">
+          <article class="resource-card"><span>PDF</span><h2>우수 수업 사례집</h2><p>수업 설계, 운영 사례, 학생 활동 예시를 제공합니다.</p><button type="button" data-toast="우수 수업 사례집">다운로드</button></article>
+          <article class="resource-card"><span>PDF</span><h2>홍보 브로슈어</h2><p>서비스 특징과 도입 기대 효과를 교내 공유용으로 정리합니다.</p><button type="button" data-toast="홍보 브로슈어">다운로드</button></article>
+          <article class="resource-card"><span>GUIDE</span><h2>KERIS 포털 가입 방법</h2><p>포털 접속, 회원 가입, 학교/학급 정보 확인 절차를 안내합니다.</p><button type="button" data-toast="KERIS 포털 가입 방법">안내 보기</button></article>
+          <article class="resource-card"><span>PPT</span><h2>교내 설명회 자료</h2><p>교사 대상 안내나 학부모 설명회에 활용할 수 있는 발표 자료입니다.</p><button type="button" data-toast="교내 설명회 자료">다운로드</button></article>
+          <article class="resource-card"><span>XLS</span><h2>도입 체크리스트</h2><p>준비사항, 담당자, 일정, 확인 여부를 관리할 수 있습니다.</p><button type="button" data-toast="도입 체크리스트">다운로드</button></article>
+          <article class="resource-card"><span>LINK</span><h2>자주 묻는 자료 모음</h2><p>설치, 브라우저, 계정, 학급 설정 자료를 한 곳에 제공합니다.</p><button type="button" data-toast="자주 묻는 자료 모음">바로가기</button></article>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <div class="qr-modal" id="qrModal" hidden>
+    <div class="qr-modal__backdrop" data-qr-close></div>
+    <div class="qr-modal__dialog" role="dialog" aria-modal="true" aria-labelledby="qrModalTitle">
+      <button type="button" class="qr-modal__close" data-qr-close aria-label="닫기">×</button>
+      <span class="qr-modal__eyebrow">KAKAOTALK CHANNEL</span>
+      <h2 id="qrModalTitle">카카오톡 채널 QR코드</h2>
+      <p class="qr-modal__desc" id="qrModalDesc">QR코드를 촬영해 채널을 추가하거나 문의를 시작할 수 있습니다.</p>
+      <div class="qr-code-mock" aria-hidden="true">
+        <div class="qr-code-mock__grid"></div>
+      </div>
+      <p class="qr-modal__caption">※ 정적 목업용 예시 QR 영역입니다. 실제 운영 시 발행사별 QR 이미지로 교체해 주세요.</p>
+    </div>
+  </div>
+
+  <footer class="site-footer">
+    실제 운영 데이터/링크/문의처는 연동 전 교체가 필요합니다.
+  </footer>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <script src="./script.js"></script>
+</body>
+</html>
